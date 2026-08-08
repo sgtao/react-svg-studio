@@ -1,0 +1,66 @@
+{
+  "categories": [
+    {
+      "slug": "heart",
+      "order": 1,
+      "license": "CC0-1.0",
+      "name": {
+        "en": "Heart",
+        "ja": "ハート",
+        "zh": "心形",
+        "es": "Corazón"
+      },
+      "description": {
+        "en": "Simple heart icons in solid and outline styles.",
+        "ja": "塗りつぶし・輪郭の2種類のシンプルなハートアイコン。",
+        "zh": "简单的实心与描边心形图标。",
+        "es": "Iconos de corazón simples en estilo sólido y contorno."
+      },
+      "assets": [
+        {
+          "id": "heart-solid",
+          "tags": ["heart", "filled", "love"],
+          "author": "SVG Studio",
+          "license": "CC0-1.0"
+        },
+        {
+          "id": "heart-outline",
+          "tags": ["heart", "outline", "love"],
+          "author": "SVG Studio",
+          "license": "CC0-1.0"
+        }
+      ]
+    },
+    {
+      "slug": "star",
+      "order": 2,
+      "license": "CC0-1.0",
+      "name": {
+        "en": "Star",
+        "ja": "スター",
+        "zh": "星形",
+        "es": "Estrella"
+      },
+      "description": {
+        "en": "Simple five-point star icons in solid and outline styles.",
+        "ja": "塗りつぶし・輪郭の2種類のシンプルな五芒星アイコン。",
+        "zh": "简单的实心与描边五角星图标。",
+        "es": "Iconos de estrella de cinco puntas en estilo sólido y contorno."
+      },
+      "assets": [
+        {
+          "id": "star-solid",
+          "tags": ["star", "filled", "rating"],
+          "author": "SVG Studio",
+          "license": "CC0-1.0"
+        },
+        {
+          "id": "star-outline",
+          "tags": ["star", "outline", "rating"],
+          "author": "SVG Studio",
+          "license": "CC0-1.0"
+        }
+      ]
+    }
+  ]
+}
