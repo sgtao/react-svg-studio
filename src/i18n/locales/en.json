@@ -1,0 +1,8 @@
+{
+  "common": {
+    "appName": "SVG Studio"
+  },
+  "export": {
+    "download": "Download as {format}"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "common": {
+    "appName": "SVGスタジオ"
+  },
+  "export": {
+    "download": "{format}形式でダウンロード"
+  }
+}

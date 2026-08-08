@@ -1,0 +1,8 @@
+{
+  "common": {
+    "appName": "SVG 工作室"
+  },
+  "export": {
+    "download": "下载为 {format}"
+  }
+}

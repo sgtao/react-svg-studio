@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "npm run content && vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run content && tsc -b && vite build",
     "content": "node scripts/generate-manifest.mjs",
     "lint": "oxlint",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "npm run content && vitest run"
   },
   "dependencies": {
     "react": "^19.2.8",
