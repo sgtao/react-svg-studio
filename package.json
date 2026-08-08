@@ -4,8 +4,9 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "npm run content && vite",
     "build": "tsc -b && vite build",
+    "content": "node scripts/generate-manifest.mjs",
     "lint": "oxlint",
     "preview": "vite preview"
   },
