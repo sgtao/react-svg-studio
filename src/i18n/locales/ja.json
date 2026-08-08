@@ -1,6 +1,37 @@
 {
   "common": {
-    "appName": "SVGスタジオ"
+    "appName": "SVGスタジオ",
+    "localeNames": {
+      "en": "English",
+      "ja": "日本語",
+      "zh": "中文",
+      "es": "Español"
+    }
+  },
+  "nav": {
+    "home": "ホーム",
+    "categories": "カテゴリー"
+  },
+  "home": {
+    "heroTitle": "すぐに使える無料SVGアイコン",
+    "heroSubtitle": "全カテゴリーのスケーラブルなアイコンを閲覧・プレビュー・書き出しできます。",
+    "categoriesHeading": "カテゴリーを見る"
+  },
+  "category": {
+    "listHeading": "すべてのカテゴリー",
+    "assetsHeading": "{name}のアイコン"
+  },
+  "asset": {
+    "metaTags": "タグ",
+    "metaAuthor": "作者",
+    "metaLicense": "ライセンス",
+    "metaSize": "サイズ",
+    "backToCategory": "{name}に戻る"
+  },
+  "notFound": {
+    "title": "ページが見つかりません",
+    "body": "お探しのページは存在しません。",
+    "backHome": "ホームに戻る"
   },
   "export": {
     "download": "{format}形式でダウンロード"

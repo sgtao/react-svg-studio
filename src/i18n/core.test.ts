@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { buildLocalePath, isLocale, localized, resolveLocale, translate } from './core'
+import { buildLocalePath, detectLocale, isLocale, localized, resolveLocale, translate } from './core'
 
 describe('isLocale', () => {
   it('accepts the four supported locales', () => {
@@ -37,6 +37,20 @@ describe('buildLocalePath', () => {
 
   it('adds a leading slash when the given path is missing one', () => {
     expect(buildLocalePath('ja', 'category/heart')).toBe('/ja/category/heart')
+  })
+})
+
+describe('detectLocale', () => {
+  it('picks the first supported locale, matching only the primary subtag', () => {
+    expect(detectLocale(['fr-FR', 'ja-JP', 'en-US'])).toBe('ja')
+  })
+
+  it('falls back to English when nothing matches', () => {
+    expect(detectLocale(['fr-FR', 'de-DE'])).toBe('en')
+  })
+
+  it('falls back to English for an empty list', () => {
+    expect(detectLocale([])).toBe('en')
   })
 })
 

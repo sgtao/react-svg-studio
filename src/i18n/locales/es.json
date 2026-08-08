@@ -1,6 +1,37 @@
 {
   "common": {
-    "appName": "SVG Studio"
+    "appName": "SVG Studio",
+    "localeNames": {
+      "en": "English",
+      "ja": "日本語",
+      "zh": "中文",
+      "es": "Español"
+    }
+  },
+  "nav": {
+    "home": "Inicio",
+    "categories": "Categorías"
+  },
+  "home": {
+    "heroTitle": "Iconos SVG gratuitos, listos para usar",
+    "heroSubtitle": "Explora, previsualiza y exporta iconos vectoriales de cada categoría.",
+    "categoriesHeading": "Explorar categorías"
+  },
+  "category": {
+    "listHeading": "Todas las categorías",
+    "assetsHeading": "Iconos de {name}"
+  },
+  "asset": {
+    "metaTags": "Etiquetas",
+    "metaAuthor": "Autor",
+    "metaLicense": "Licencia",
+    "metaSize": "Tamaño",
+    "backToCategory": "Volver a {name}"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "body": "La página que buscas no existe.",
+    "backHome": "Volver al inicio"
   },
   "export": {
     "download": "Descargar como {format}"

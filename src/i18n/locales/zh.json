@@ -1,6 +1,37 @@
 {
   "common": {
-    "appName": "SVG 工作室"
+    "appName": "SVG 工作室",
+    "localeNames": {
+      "en": "English",
+      "ja": "日本語",
+      "zh": "中文",
+      "es": "Español"
+    }
+  },
+  "nav": {
+    "home": "首页",
+    "categories": "分类"
+  },
+  "home": {
+    "heroTitle": "免费可用的SVG图标",
+    "heroSubtitle": "浏览、预览并导出各分类下的矢量图标。",
+    "categoriesHeading": "浏览分类"
+  },
+  "category": {
+    "listHeading": "所有分类",
+    "assetsHeading": "{name}图标"
+  },
+  "asset": {
+    "metaTags": "标签",
+    "metaAuthor": "作者",
+    "metaLicense": "许可证",
+    "metaSize": "尺寸",
+    "backToCategory": "返回{name}"
+  },
+  "notFound": {
+    "title": "页面未找到",
+    "body": "您访问的页面不存在。",
+    "backHome": "返回首页"
   },
   "export": {
     "download": "下载为 {format}"

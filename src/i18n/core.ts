@@ -19,6 +19,15 @@ export function buildLocalePath(locale: Locale, path: string): string {
   return `/${locale}${normalized}`
 }
 
+/** Picks the first supported locale from a browser `navigator.languages` list, falling back to {@link DEFAULT_LOCALE}. */
+export function detectLocale(languages: readonly string[]): Locale {
+  for (const tag of languages) {
+    const [primary] = tag.split('-')
+    if (isLocale(primary)) return primary
+  }
+  return DEFAULT_LOCALE
+}
+
 export interface Dictionary {
   [key: string]: string | Dictionary
 }

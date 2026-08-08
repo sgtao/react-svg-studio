@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from 'react'
-import { buildLocalePath, resolveLocale, DEFAULT_LOCALE, type Locale } from './core'
+import { useMemo } from 'react'
+import { useLocation } from 'react-router-dom'
+import { buildLocalePath, resolveLocale, type Locale } from './core'
 import { t } from './dictionary'
 
 export interface I18n {
@@ -9,19 +10,12 @@ export interface I18n {
 }
 
 /**
- * Reads the current locale from `window.location.pathname` (no router dependency yet;
- * T-00-6 wires this to route params). Re-resolves on `popstate` (back/forward navigation).
+ * Reads the current locale from the router's current pathname. Computed fresh on every
+ * render (not cached in state): react-router re-renders the mounted route tree on every
+ * navigation, including `<Link>` clicks, which do not fire `popstate`.
  */
 export function useI18n(): I18n {
-  const [locale, setLocale] = useState<Locale>(() =>
-    typeof window === 'undefined' ? DEFAULT_LOCALE : resolveLocale(window.location.pathname),
-  )
-
-  useEffect(() => {
-    const handlePopState = () => setLocale(resolveLocale(window.location.pathname))
-    window.addEventListener('popstate', handlePopState)
-    return () => window.removeEventListener('popstate', handlePopState)
-  }, [])
+  const locale = resolveLocale(useLocation().pathname)
 
   return useMemo(
     () => ({

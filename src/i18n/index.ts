@@ -2,6 +2,7 @@ export {
   DEFAULT_LOCALE,
   LOCALES,
   buildLocalePath,
+  detectLocale,
   isLocale,
   localized,
   resolveLocale,
