@@ -10,7 +10,10 @@
   },
   "nav": {
     "home": "Home",
-    "categories": "Categories"
+    "categories": "Categories",
+    "language": {
+      "ariaLabel": "Language"
+    }
   },
   "home": {
     "heroTitle": "SVG Studio — Built with React",

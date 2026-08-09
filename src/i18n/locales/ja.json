@@ -10,7 +10,10 @@
   },
   "nav": {
     "home": "ホーム",
-    "categories": "カテゴリー"
+    "categories": "カテゴリー",
+    "language": {
+      "ariaLabel": "言語"
+    }
   },
   "home": {
     "heroTitle": "SVG Studio — Reactで構築",
