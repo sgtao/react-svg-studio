@@ -1,7 +1,9 @@
+import { Button, Flex, HStack, Heading } from '@chakra-ui/react'
 import { useEffect } from 'react'
 import { Link, Outlet, useLocation, useNavigate, useParams } from 'react-router-dom'
 import AppearanceMenu from '../components/AppearanceMenu'
-import { LOCALES, detectLocale, isLocale, useI18n } from '../i18n'
+import LanguageMenu from '../components/LanguageMenu'
+import { detectLocale, isLocale, useI18n } from '../i18n'
 
 /** Element for both `/` and `/:lang`: redirects to a detected locale when `:lang` is missing or unsupported. */
 export default function RootLayout() {
@@ -30,25 +32,29 @@ export default function RootLayout() {
 
   return (
     <>
-      <header>
-        <Link to={localePath('/')}>{t('common.appName')}</Link>
-        <nav>
-          <Link to={localePath('/')}>{t('nav.home')}</Link>
-          <Link to={localePath('/category')}>{t('nav.categories')}</Link>
-        </nav>
-        <nav aria-label="Language">
-          {LOCALES.map((locale) => {
-            const target = [...segments]
-            target[1] = locale
-            return (
-              <Link key={locale} to={target.join('/') || '/'}>
-                {t(`common.localeNames.${locale}`)}
-              </Link>
-            )
-          })}
-        </nav>
-        <AppearanceMenu />
-      </header>
+      <Flex as="header" justify="space-between" align="center" wrap="wrap" gap="3" paddingY="4">
+        <HStack gap="3">
+          <Button asChild variant="plain" paddingInline="0">
+            <Link to={localePath('/')}>
+              <Heading as="span" size="md">
+                {t('common.appName')}
+              </Heading>
+            </Link>
+          </Button>
+          <HStack as="nav" gap="1">
+            <Button asChild variant="ghost" size="sm" borderRadius="full">
+              <Link to={localePath('/')}>{t('nav.home')}</Link>
+            </Button>
+            <Button asChild variant="ghost" size="sm" borderRadius="full">
+              <Link to={localePath('/category')}>{t('nav.categories')}</Link>
+            </Button>
+          </HStack>
+        </HStack>
+        <HStack gap="2">
+          <LanguageMenu segments={segments} />
+          <AppearanceMenu />
+        </HStack>
+      </Flex>
       <Outlet />
     </>
   )

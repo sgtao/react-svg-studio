@@ -1,5 +1,7 @@
-import { Link, useParams } from 'react-router-dom'
-import { getCategory, thumbnailUrl } from '../content'
+import { Heading, SimpleGrid } from '@chakra-ui/react'
+import { useParams } from 'react-router-dom'
+import AssetCard from '../components/AssetCard'
+import { getCategory } from '../content'
 import { localized, useI18n } from '../i18n'
 import NotFoundPage from './NotFoundPage'
 
@@ -14,17 +16,19 @@ export default function CategoryPage() {
 
   return (
     <section>
-      <h1>{t('category.assetsHeading', { name })}</h1>
-      <ul>
+      <Heading as="h1" size="lg" marginBottom="4">
+        {t('category.assetsHeading', { name })}
+      </Heading>
+      <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 6 }} gap="3">
         {category.assets.map((asset) => (
-          <li key={asset.id}>
-            <Link to={localePath(`/category/${category.slug}/${asset.id}`)}>
-              <img src={thumbnailUrl(asset)} alt="" width={64} height={64} />
-              {asset.id}
-            </Link>
-          </li>
+          <AssetCard
+            key={asset.id}
+            asset={asset}
+            category={category}
+            to={localePath(`/category/${category.slug}/${asset.id}`)}
+          />
         ))}
-      </ul>
+      </SimpleGrid>
     </section>
   )
 }

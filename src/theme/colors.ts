@@ -7,6 +7,19 @@ export const ACCENT_NAMES = ['lime', 'mint', 'sky'] as const
 export type AccentName = (typeof ACCENT_NAMES)[number]
 
 /**
+ * Fixed per-category badge colors, independent of the user-selectable `AccentName`
+ * preset above. Uses Chakra's built-in palette names directly (no custom scale
+ * needed — `createSystem(defaultConfig, ...)` already ships colorPalette-aware
+ * semantic tokens for these) — see 01_docs/07-t-00-10-list-detail-pages-design.md §3.
+ */
+export const CATEGORY_BADGE_PALETTE = ['pink', 'orange', 'purple', 'teal', 'cyan', 'blue'] as const
+
+/** Cycles through CATEGORY_BADGE_PALETTE by a category's declared `order`, so new categories get a color automatically. */
+export function categoryBadgeColor(order: number): (typeof CATEGORY_BADGE_PALETTE)[number] {
+  return CATEGORY_BADGE_PALETTE[order % CATEGORY_BADGE_PALETTE.length]
+}
+
+/**
  * 50-950 scales for the three accent presets, generated from the exact hexes
  * the user picked (kept verbatim at the "100" step) with a fixed moderate
  * saturation curve for the other steps — see 01_docs/04-chakra-ui-theming-design.md §5.

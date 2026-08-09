@@ -1,24 +1,22 @@
-import { Link } from 'react-router-dom'
+import { Heading, SimpleGrid } from '@chakra-ui/react'
+import CategoryCard from '../components/CategoryCard'
 import { getCategories } from '../content'
-import { localized, useI18n } from '../i18n'
+import { useI18n } from '../i18n'
 
 export default function CollectionPage() {
-  const { t, locale, localePath } = useI18n()
+  const { t } = useI18n()
   const categories = getCategories()
 
   return (
     <section>
-      <h1>{t('category.listHeading')}</h1>
-      <ul>
+      <Heading as="h1" size="lg" marginBottom="4">
+        {t('category.listHeading')}
+      </Heading>
+      <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }} gap="4">
         {categories.map((category) => (
-          <li key={category.slug}>
-            <Link to={localePath(`/category/${category.slug}`)}>
-              {localized(category.name, locale)}
-            </Link>
-            <p>{localized(category.description, locale)}</p>
-          </li>
+          <CategoryCard key={category.slug} category={category} variant="full" />
         ))}
-      </ul>
+      </SimpleGrid>
     </section>
   )
 }
