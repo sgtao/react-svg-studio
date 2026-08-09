@@ -4,7 +4,7 @@
     "localeNames": {
       "en": "English",
       "ja": "日本語",
-      "zh": "中文",
+      "zh": "繁体字",
       "es": "Español"
     }
   },
@@ -13,7 +13,7 @@
     "categories": "分類"
   },
   "home": {
-    "heroTitle": "SVG Studio — 由 React 驅動",
+    "heroTitle": "SVG Studio — 由 React 構築",
     "heroSubtitle": "瀏覽、預覽並匯出各分類下的向量圖示。",
     "categoriesHeading": "瀏覽分類"
   },
