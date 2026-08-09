@@ -17,6 +17,6 @@ describe('t (real dictionaries)', () => {
   it('translates workbench panel titles across locales', () => {
     expect(t('en', 'workbench.source.title')).toBe('Source')
     expect(t('ja', 'workbench.preview.title')).toBe('プレビュー')
-    expect(t('zh', 'workbench.export.title')).toBe('导出')
+    expect(t('zh', 'workbench.export.title')).toBe('匯出')
   })
 })

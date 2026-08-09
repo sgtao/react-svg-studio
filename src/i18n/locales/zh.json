@@ -9,65 +9,65 @@
     }
   },
   "nav": {
-    "home": "首页",
-    "categories": "分类"
+    "home": "首頁",
+    "categories": "分類"
   },
   "home": {
-    "heroTitle": "免费可用的SVG图标",
-    "heroSubtitle": "浏览、预览并导出各分类下的矢量图标。",
-    "categoriesHeading": "浏览分类"
+    "heroTitle": "SVG Studio — 由 React 驅動",
+    "heroSubtitle": "瀏覽、預覽並匯出各分類下的向量圖示。",
+    "categoriesHeading": "瀏覽分類"
   },
   "category": {
-    "listHeading": "所有分类",
-    "assetsHeading": "{name}图标"
+    "listHeading": "所有分類",
+    "assetsHeading": "{name}圖示"
   },
   "asset": {
-    "metaTags": "标签",
+    "metaTags": "標籤",
     "metaAuthor": "作者",
-    "metaLicense": "许可证",
+    "metaLicense": "授權",
     "metaSize": "尺寸",
     "backToCategory": "返回{name}"
   },
   "notFound": {
-    "title": "页面未找到",
-    "body": "您访问的页面不存在。",
-    "backHome": "返回首页"
+    "title": "頁面未找到",
+    "body": "您造訪的頁面不存在。",
+    "backHome": "返回首頁"
   },
   "workbench": {
     "source": {
-      "title": "源码",
+      "title": "原始碼",
       "format": "格式化",
-      "copy": "复制",
-      "paste": "粘贴",
-      "openFile": "打开文件",
-      "save": "保存为 .svg",
+      "copy": "複製",
+      "paste": "貼上",
+      "openFile": "開啟檔案",
+      "save": "儲存為 .svg",
       "clear": "清除"
     },
     "preview": {
-      "title": "预览",
-      "empty": "粘贴或打开一个SVG以在此处预览。",
+      "title": "預覽",
+      "empty": "貼上或開啟一個SVG以在此處預覽。",
       "dimensions": "{width} × {height}px",
-      "bytes": "{bytes} 字节"
+      "bytes": "{bytes} 位元組"
     },
     "export": {
-      "title": "导出",
-      "scale": "缩放比例",
-      "filename": "文件名"
+      "title": "匯出",
+      "scale": "縮放比例",
+      "filename": "檔名"
     }
   },
   "export": {
-    "download": "下载为 {format}"
+    "download": "下載為 {format}"
   },
   "appearance": {
-    "trigger": "外观",
-    "colorLabel": "颜色",
+    "trigger": "外觀",
+    "colorLabel": "顏色",
     "modeLabel": "模式",
-    "light": "浅色",
+    "light": "淺色",
     "dark": "深色",
     "accentNames": {
-      "lime": "青柠",
+      "lime": "青檸",
       "mint": "薄荷",
-      "sky": "天蓝"
+      "sky": "天藍"
     }
   }
 }
