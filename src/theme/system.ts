@@ -19,18 +19,22 @@ function tokenScale(name: AccentName) {
 }
 
 /**
- * Maps each palette onto Chakra's `colorPalette` semantic slots. `subtle` is
- * deliberately the exact hex the user picked (the "100" step) — these accents
- * are pastel by design, so `contrast` (text on a `solid` background) stays
- * dark (950) for all three rather than the usual light-on-solid default.
+ * Maps each palette onto Chakra's `colorPalette` semantic slots. In light mode,
+ * `subtle` is deliberately the exact hex the user picked (the "100" step) — these
+ * accents are pastel by design. In dark mode, `subtle`/`muted`/`emphasized`/`fg`
+ * flip to dark-tinted steps (900/800/700/200) so panels built from these tokens
+ * (e.g. Workbench cards, T-00-9) don't stay light-pastel on a dark page. `solid`
+ * and `contrast` (text on a `solid` background) stay the same in both modes —
+ * `solid` (500) is bright enough to read against either background, so `contrast`
+ * can stay dark (950) rather than the usual light-on-solid default.
  */
 function semanticScale(name: AccentName) {
   return {
     contrast: { value: `{colors.${name}.950}` },
-    fg: { value: `{colors.${name}.700}` },
-    subtle: { value: `{colors.${name}.100}` },
-    muted: { value: `{colors.${name}.200}` },
-    emphasized: { value: `{colors.${name}.300}` },
+    fg: { value: { _light: `{colors.${name}.700}`, _dark: `{colors.${name}.200}` } },
+    subtle: { value: { _light: `{colors.${name}.100}`, _dark: `{colors.${name}.900}` } },
+    muted: { value: { _light: `{colors.${name}.200}`, _dark: `{colors.${name}.800}` } },
+    emphasized: { value: { _light: `{colors.${name}.300}`, _dark: `{colors.${name}.700}` } },
     solid: { value: `{colors.${name}.500}` },
     focusRing: { value: `{colors.${name}.500}` },
   }
