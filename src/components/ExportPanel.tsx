@@ -69,6 +69,7 @@ export default function ExportPanel() {
         <Field.Root>
           <Field.Label>{t('workbench.export.scale')}</Field.Label>
           <Slider.Root
+            aria-label={[t('workbench.export.scale')]}
             value={[scale]}
             onValueChange={(details) => setScale(details.value[0])}
             min={MIN_SCALE}
