@@ -1,3 +1,4 @@
+import { Button, Card, Flex, Text, Textarea } from '@chakra-ui/react'
 import { useRef, type ChangeEvent } from 'react'
 import { useI18n } from '../i18n'
 import { downloadText, safeFilename } from '../lib/export'
@@ -22,57 +23,95 @@ export default function SourcePanel() {
   }
 
   return (
-    <section className="source-panel">
-      <div className="source-panel__toolbar" role="toolbar">
-        <button type="button" onClick={() => setSource(format(source))}>
-          {t('workbench.source.format')}
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            navigator.clipboard?.writeText(source).catch(() => {})
-          }}
-        >
-          {t('workbench.source.copy')}
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            navigator.clipboard
-              ?.readText()
-              .then(setSource)
-              .catch(() => {})
-          }}
-        >
-          {t('workbench.source.paste')}
-        </button>
-        <button type="button" onClick={() => fileInputRef.current?.click()}>
-          {t('workbench.source.openFile')}
-        </button>
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept=".svg,image/svg+xml"
-          hidden
-          onChange={handleOpenFile}
+    <Card.Root
+      variant="outline"
+      bg="colorPalette.subtle"
+      borderColor="colorPalette.emphasized"
+      borderRadius="2xl"
+    >
+      <Card.Header>
+        <Card.Title color="colorPalette.fg">{t('workbench.source.title')}</Card.Title>
+      </Card.Header>
+      <Card.Body gap="3">
+        <Flex role="toolbar" wrap="wrap" gap="2">
+          <Button
+            type="button"
+            size="sm"
+            variant="subtle"
+            borderRadius="full"
+            onClick={() => setSource(format(source))}
+          >
+            ✨ {t('workbench.source.format')}
+          </Button>
+          <Button
+            type="button"
+            size="sm"
+            variant="subtle"
+            borderRadius="full"
+            onClick={() => {
+              navigator.clipboard?.writeText(source).catch(() => {})
+            }}
+          >
+            📋 {t('workbench.source.copy')}
+          </Button>
+          <Button
+            type="button"
+            size="sm"
+            variant="subtle"
+            borderRadius="full"
+            onClick={() => {
+              navigator.clipboard
+                ?.readText()
+                .then(setSource)
+                .catch(() => {})
+            }}
+          >
+            📥 {t('workbench.source.paste')}
+          </Button>
+          <Button
+            type="button"
+            size="sm"
+            variant="subtle"
+            borderRadius="full"
+            onClick={() => fileInputRef.current?.click()}
+          >
+            📂 {t('workbench.source.openFile')}
+          </Button>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept=".svg,image/svg+xml"
+            hidden
+            onChange={handleOpenFile}
+          />
+          <Button
+            type="button"
+            size="sm"
+            variant="subtle"
+            borderRadius="full"
+            onClick={() => downloadText(source, `${safeFilename(name, 'image')}.svg`)}
+          >
+            💾 {t('workbench.source.save')}
+          </Button>
+          <Button
+            type="button"
+            size="sm"
+            variant="subtle"
+            borderRadius="full"
+            onClick={() => setSource('')}
+          >
+            🗑️ {t('workbench.source.clear')}
+          </Button>
+        </Flex>
+        <Textarea
+          value={source}
+          onChange={(event) => setSource(event.target.value)}
+          spellCheck={false}
+          fontFamily="mono"
+          minH="14em"
         />
-        <button
-          type="button"
-          onClick={() => downloadText(source, `${safeFilename(name, 'image')}.svg`)}
-        >
-          {t('workbench.source.save')}
-        </button>
-        <button type="button" onClick={() => setSource('')}>
-          {t('workbench.source.clear')}
-        </button>
-      </div>
-      <textarea
-        className="source-panel__textarea"
-        value={source}
-        onChange={(event) => setSource(event.target.value)}
-        spellCheck={false}
-      />
-      {errorMessage ? <p className="source-panel__error">{errorMessage}</p> : null}
-    </section>
+        {errorMessage ? <Text color="fg.error">{errorMessage}</Text> : null}
+      </Card.Body>
+    </Card.Root>
   )
 }
