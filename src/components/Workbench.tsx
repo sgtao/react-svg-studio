@@ -1,3 +1,4 @@
+import { SimpleGrid } from '@chakra-ui/react'
 import { SvgDocumentProvider } from '../state/svgDocument'
 import ExportPanel from './ExportPanel'
 import PreviewPanel from './PreviewPanel'
@@ -11,11 +12,11 @@ export interface WorkbenchProps {
 export default function Workbench({ initialSource, initialName }: WorkbenchProps) {
   return (
     <SvgDocumentProvider initialSource={initialSource} initialName={initialName}>
-      <div className="workbench">
+      <SimpleGrid columns={{ base: 1, lg: 3 }} gap="4">
         <SourcePanel />
         <PreviewPanel />
         <ExportPanel />
-      </div>
+      </SimpleGrid>
     </SvgDocumentProvider>
   )
 }
