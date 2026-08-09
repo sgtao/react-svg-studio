@@ -54,5 +54,17 @@
   },
   "export": {
     "download": "下载为 {format}"
+  },
+  "appearance": {
+    "trigger": "外观",
+    "colorLabel": "颜色",
+    "modeLabel": "模式",
+    "light": "浅色",
+    "dark": "深色",
+    "accentNames": {
+      "lime": "青柠",
+      "mint": "薄荷",
+      "sky": "天蓝"
+    }
   }
 }

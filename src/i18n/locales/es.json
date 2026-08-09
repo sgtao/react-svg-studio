@@ -54,5 +54,17 @@
   },
   "export": {
     "download": "Descargar como {format}"
+  },
+  "appearance": {
+    "trigger": "Apariencia",
+    "colorLabel": "Color",
+    "modeLabel": "Modo",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "accentNames": {
+      "lime": "Lima",
+      "mint": "Menta",
+      "sky": "Cielo"
+    }
   }
 }

@@ -18,6 +18,9 @@ dist-ssr
 # generated at build time by scripts/generate-manifest.mjs
 src/content/manifest.generated.json
 
+# brainstorming visual companion mockups
+.superpowers
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

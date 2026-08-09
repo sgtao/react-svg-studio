@@ -54,5 +54,17 @@
   },
   "export": {
     "download": "Download as {format}"
+  },
+  "appearance": {
+    "trigger": "Appearance",
+    "colorLabel": "Color",
+    "modeLabel": "Mode",
+    "light": "Light",
+    "dark": "Dark",
+    "accentNames": {
+      "lime": "Lime",
+      "mint": "Mint",
+      "sky": "Sky"
+    }
   }
 }

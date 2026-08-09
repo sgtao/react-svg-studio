@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link, Outlet, useLocation, useNavigate, useParams } from 'react-router-dom'
+import AppearanceMenu from '../components/AppearanceMenu'
 import { LOCALES, detectLocale, isLocale, useI18n } from '../i18n'
 
 /** Element for both `/` and `/:lang`: redirects to a detected locale when `:lang` is missing or unsupported. */
@@ -46,6 +47,7 @@ export default function RootLayout() {
             )
           })}
         </nav>
+        <AppearanceMenu />
       </header>
       <Outlet />
     </>

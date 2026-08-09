@@ -54,5 +54,17 @@
   },
   "export": {
     "download": "{format}形式でダウンロード"
+  },
+  "appearance": {
+    "trigger": "外観",
+    "colorLabel": "カラー",
+    "modeLabel": "モード",
+    "light": "ライト",
+    "dark": "ダーク",
+    "accentNames": {
+      "lime": "ライム",
+      "mint": "ミント",
+      "sky": "スカイ"
+    }
   }
 }
