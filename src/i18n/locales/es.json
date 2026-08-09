@@ -35,6 +35,7 @@
   },
   "workbench": {
     "source": {
+      "title": "Fuente",
       "format": "Formatear",
       "copy": "Copiar",
       "paste": "Pegar",
@@ -43,11 +44,13 @@
       "clear": "Limpiar"
     },
     "preview": {
+      "title": "Vista previa",
       "empty": "Pega o abre un SVG para previsualizarlo aquí.",
       "dimensions": "{width} × {height}px",
       "bytes": "{bytes} bytes"
     },
     "export": {
+      "title": "Exportar",
       "scale": "Escala",
       "filename": "Nombre de archivo"
     }

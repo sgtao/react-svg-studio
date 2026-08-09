@@ -35,6 +35,7 @@
   },
   "workbench": {
     "source": {
+      "title": "ソース",
       "format": "整形",
       "copy": "コピー",
       "paste": "貼り付け",
@@ -43,11 +44,13 @@
       "clear": "クリア"
     },
     "preview": {
+      "title": "プレビュー",
       "empty": "SVGを貼り付けるかファイルを開くと、ここにプレビューが表示されます。",
       "dimensions": "{width} × {height}px",
       "bytes": "{bytes} バイト"
     },
     "export": {
+      "title": "書き出し",
       "scale": "倍率",
       "filename": "ファイル名"
     }
