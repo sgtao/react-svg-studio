@@ -4,7 +4,7 @@
     "localeNames": {
       "en": "English",
       "ja": "日本語",
-      "zh": "繁体字",
+      "zh": "繁體字",
       "es": "Español"
     }
   },
@@ -13,7 +13,7 @@
     "categories": "Categorías"
   },
   "home": {
-    "heroTitle": "SVG Studio — Impulsado por React",
+    "heroTitle": "SVG Studio — Construido con React",
     "heroSubtitle": "Explora, previsualiza y exporta iconos vectoriales de cada categoría.",
     "categoriesHeading": "Explorar categorías"
   },

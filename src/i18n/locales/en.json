@@ -4,7 +4,7 @@
     "localeNames": {
       "en": "English",
       "ja": "日本語",
-      "zh": "繁体字",
+      "zh": "繁體字",
       "es": "Español"
     }
   },
@@ -13,7 +13,7 @@
     "categories": "Categories"
   },
   "home": {
-    "heroTitle": "SVG Studio — Powered by React",
+    "heroTitle": "SVG Studio — Built with React",
     "heroSubtitle": "Browse, preview, and export scalable icons in every category.",
     "categoriesHeading": "Browse categories"
   },
