@@ -4,6 +4,7 @@ import {
   useState,
   type PointerEvent as ReactPointerEvent,
 } from 'react'
+import { Box, Card, Text } from '@chakra-ui/react'
 import { useI18n } from '../i18n'
 import { useSvgDocument } from '../state/svgDocument'
 
@@ -85,42 +86,55 @@ export default function PreviewPanel() {
   const hasContent = inspection.ok && safeSource.trim().length > 0
 
   return (
-    <section className="preview-panel">
-      <div
-        ref={containerRef}
-        className="preview-panel__viewport"
-        style={{ position: 'relative', overflow: 'hidden', touchAction: 'none', height: 320 }}
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={handlePointerUp}
-        onPointerCancel={handlePointerUp}
-        onDoubleClick={() => setView(INITIAL_VIEW)}
-      >
-        {hasContent ? (
-          <div
-            className="preview-panel__canvas"
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              width: inspection.width,
-              height: inspection.height,
-              transform: `translate(-50%, -50%) translate(${view.x}px, ${view.y}px) scale(${view.scale})`,
-            }}
-            dangerouslySetInnerHTML={{ __html: safeSource }}
-          />
-        ) : (
-          <p className="preview-panel__empty">{t('workbench.preview.empty')}</p>
-        )}
-      </div>
-      <p className="preview-panel__meta">
-        {t('workbench.preview.dimensions', {
-          width: inspection.width,
-          height: inspection.height,
-        })}
-        {' · '}
-        {t('workbench.preview.bytes', { bytes: inspection.bytes })}
-      </p>
-    </section>
+    <Card.Root
+      variant="outline"
+      bg="colorPalette.subtle"
+      borderColor="colorPalette.emphasized"
+      borderRadius="2xl"
+    >
+      <Card.Header>
+        <Card.Title color="colorPalette.fg">{t('workbench.preview.title')}</Card.Title>
+      </Card.Header>
+      <Card.Body gap="3">
+        <Box
+          ref={containerRef}
+          position="relative"
+          overflow="hidden"
+          touchAction="none"
+          height="320px"
+          borderRadius="xl"
+          bg="bg"
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerUp}
+          onDoubleClick={() => setView(INITIAL_VIEW)}
+        >
+          {hasContent ? (
+            <Box
+              position="absolute"
+              top="50%"
+              left="50%"
+              style={{
+                width: inspection.width,
+                height: inspection.height,
+                transform: `translate(-50%, -50%) translate(${view.x}px, ${view.y}px) scale(${view.scale})`,
+              }}
+              dangerouslySetInnerHTML={{ __html: safeSource }}
+            />
+          ) : (
+            <Text color="fg.muted">{t('workbench.preview.empty')}</Text>
+          )}
+        </Box>
+        <Text fontSize="xs" color="fg.muted">
+          {t('workbench.preview.dimensions', {
+            width: inspection.width,
+            height: inspection.height,
+          })}
+          {' · '}
+          {t('workbench.preview.bytes', { bytes: inspection.bytes })}
+        </Text>
+      </Card.Body>
+    </Card.Root>
   )
 }
