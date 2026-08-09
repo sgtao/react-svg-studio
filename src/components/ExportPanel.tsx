@@ -1,3 +1,4 @@
+import { Box, Button, Card, Field, Input, Slider, Stack, Text } from '@chakra-ui/react'
 import { useState } from 'react'
 import { useI18n } from '../i18n'
 import { downloadBlob, rasterize, safeFilename, toIco, type RasterFormat } from '../lib/export'
@@ -55,33 +56,61 @@ export default function ExportPanel() {
   }
 
   return (
-    <section className="export-panel">
-      <label className="export-panel__field">
-        {t('workbench.export.scale')}
-        <input
-          type="range"
-          min={MIN_SCALE}
-          max={MAX_SCALE}
-          step={0.5}
-          value={scale}
-          onChange={(event) => setScale(Number(event.target.value))}
-        />
-        <span>{scale}×</span>
-      </label>
-      <label className="export-panel__field">
-        {t('workbench.export.filename')}
-        <input type="text" value={name} onChange={(event) => setName(event.target.value)} />
-      </label>
-      <ul className="export-panel__formats">
-        {EXPORT_KINDS.map((kind) => (
-          <li key={kind}>
-            <button type="button" disabled={pending === kind} onClick={() => handleDownload(kind)}>
-              {t('export.download', { format: FORMAT_LABELS[kind] })}
-            </button>
-            {errors[kind] ? <p className="export-panel__error">{errors[kind]}</p> : null}
-          </li>
-        ))}
-      </ul>
-    </section>
+    <Card.Root
+      variant="outline"
+      bg="colorPalette.subtle"
+      borderColor="colorPalette.emphasized"
+      borderRadius="2xl"
+    >
+      <Card.Header>
+        <Card.Title color="colorPalette.fg">{t('workbench.export.title')}</Card.Title>
+      </Card.Header>
+      <Card.Body gap="4">
+        <Field.Root>
+          <Field.Label>{t('workbench.export.scale')}</Field.Label>
+          <Slider.Root
+            value={[scale]}
+            onValueChange={(details) => setScale(details.value[0])}
+            min={MIN_SCALE}
+            max={MAX_SCALE}
+            step={0.5}
+          >
+            <Slider.Control>
+              <Slider.Track>
+                <Slider.Range />
+              </Slider.Track>
+              <Slider.Thumbs />
+            </Slider.Control>
+          </Slider.Root>
+          <Text fontSize="sm" color="fg.muted">
+            {scale}×
+          </Text>
+        </Field.Root>
+        <Field.Root>
+          <Field.Label>{t('workbench.export.filename')}</Field.Label>
+          <Input value={name} onChange={(event) => setName(event.target.value)} />
+        </Field.Root>
+        <Stack gap="2">
+          {EXPORT_KINDS.map((kind) => (
+            <Box key={kind}>
+              <Button
+                type="button"
+                borderRadius="full"
+                variant="solid"
+                disabled={pending === kind}
+                onClick={() => handleDownload(kind)}
+              >
+                ⬇️ {t('export.download', { format: FORMAT_LABELS[kind] })}
+              </Button>
+              {errors[kind] ? (
+                <Text fontSize="sm" color="fg.error">
+                  {errors[kind]}
+                </Text>
+              ) : null}
+            </Box>
+          ))}
+        </Stack>
+      </Card.Body>
+    </Card.Root>
   )
 }
