@@ -33,6 +33,25 @@
     "body": "您访问的页面不存在。",
     "backHome": "返回首页"
   },
+  "workbench": {
+    "source": {
+      "format": "格式化",
+      "copy": "复制",
+      "paste": "粘贴",
+      "openFile": "打开文件",
+      "save": "保存为 .svg",
+      "clear": "清除"
+    },
+    "preview": {
+      "empty": "粘贴或打开一个SVG以在此处预览。",
+      "dimensions": "{width} × {height}px",
+      "bytes": "{bytes} 字节"
+    },
+    "export": {
+      "scale": "缩放比例",
+      "filename": "文件名"
+    }
+  },
   "export": {
     "download": "下载为 {format}"
   }

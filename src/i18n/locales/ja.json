@@ -33,6 +33,25 @@
     "body": "お探しのページは存在しません。",
     "backHome": "ホームに戻る"
   },
+  "workbench": {
+    "source": {
+      "format": "整形",
+      "copy": "コピー",
+      "paste": "貼り付け",
+      "openFile": "ファイルを開く",
+      "save": ".svgとして保存",
+      "clear": "クリア"
+    },
+    "preview": {
+      "empty": "SVGを貼り付けるかファイルを開くと、ここにプレビューが表示されます。",
+      "dimensions": "{width} × {height}px",
+      "bytes": "{bytes} バイト"
+    },
+    "export": {
+      "scale": "倍率",
+      "filename": "ファイル名"
+    }
+  },
   "export": {
     "download": "{format}形式でダウンロード"
   }

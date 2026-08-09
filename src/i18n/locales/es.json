@@ -33,6 +33,25 @@
     "body": "La página que buscas no existe.",
     "backHome": "Volver al inicio"
   },
+  "workbench": {
+    "source": {
+      "format": "Formatear",
+      "copy": "Copiar",
+      "paste": "Pegar",
+      "openFile": "Abrir archivo",
+      "save": "Guardar como .svg",
+      "clear": "Limpiar"
+    },
+    "preview": {
+      "empty": "Pega o abre un SVG para previsualizarlo aquí.",
+      "dimensions": "{width} × {height}px",
+      "bytes": "{bytes} bytes"
+    },
+    "export": {
+      "scale": "Escala",
+      "filename": "Nombre de archivo"
+    }
+  },
   "export": {
     "download": "Descargar como {format}"
   }
