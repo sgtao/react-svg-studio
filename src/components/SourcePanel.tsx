@@ -109,6 +109,9 @@ export default function SourcePanel() {
           spellCheck={false}
           fontFamily="mono"
           minH="14em"
+          bg="#ffffff"
+          color="#000000"
+          _dark={{ bg: '#000000', color: '#ffffff' }}
         />
         {errorMessage ? <Text color="fg.error">{errorMessage}</Text> : null}
       </Card.Body>
