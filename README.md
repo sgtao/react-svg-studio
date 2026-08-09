@@ -53,8 +53,12 @@ Adding or removing a file under `content/` has no effect until `npm run content`
 
 ## Content & Licensing
 
-Every asset in `content/` carries its own `license` field in `content/categories.json`; the bundled starter set is `CC0-1.0`. This repository does not yet declare a license for the application code itself.
+Every asset in `content/` carries its own `license` field in `content/categories.json`; the bundled starter set is `CC0-1.0`.
 
-## Deployment
+## License
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which runs the test suite, builds the app, and publishes `dist/` to GitHub Pages.
+MIT
+
+---
+
+🤖 Built with [Claude.ai](https://claude.ai/)
